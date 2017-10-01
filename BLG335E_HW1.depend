@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1506862688 source:c:\users\bunyamin\desktop\okul dersleri\blg 335e algo 1\hw1\blg335e_hw1\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+	"CardManager.h"
+
+1506858089 c:\users\bunyamin\desktop\okul dersleri\blg 335e algo 1\hw1\blg335e_hw1\cardmanager.h
+
