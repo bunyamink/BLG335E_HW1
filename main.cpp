@@ -8,11 +8,10 @@ using namespace std;
 
 int main()
 {
-    string method, sorting, input_file, output_file;
+    string method, sorting, input_file;
     method = "full";
     sorting = "i";
     input_file = "hs-set-10k.txt";
-    output_file = "hs-set-10k-full.txt";
 
     fstream inputFile, outputFile;
     inputFile.open("files/hs-set-10k.txt");
@@ -42,13 +41,13 @@ int main()
     CardManager cardManager;
 
     if(method == "full" && sorting == "i"){
-        cardManager.insertionSort(arraySize, 2, names, classes, rarities, sets, types, costs);
-        cardManager.insertionSort(arraySize, 6, names, classes, rarities, sets, types, costs);
-        cardManager.insertionSort(arraySize, 1, names, classes, rarities, sets, types, costs);
+        cardManager.insertionSortFull(arraySize, 2, names, classes, rarities, sets, types, costs);
     }else if(method == "filter" && sorting == "i"){
-        cardManager.insertionSort(arraySize, 5, names, classes, rarities, sets, types, costs);
+        cardManager.insertionSortFilter(arraySize, 5, names, classes, rarities, sets, types, costs);
+    }else if(method == "full" && sorting == "m"){
+
     }else{
-        return 0;
+
     }
 
     if(method == "filter"){
