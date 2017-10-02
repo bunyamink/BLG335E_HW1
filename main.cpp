@@ -39,14 +39,27 @@ int main()
     }
 
     int arraySize = i - 1;
-    outputFile.open("files/hs-set-10k-full.txt", fstream::out);
+    CardManager cardManager;
 
-    for(int k = 0; k < arraySize; k++){
-        outputFile << names[k] << '\t' << classes[k] << '\t' << rarities[k]<<'\t' << sets[k] <<'\t' << types[k] <<'\t' << costs[k] << endl;
+    if(method == "full" && sorting == "i"){
+        cardManager.insertionSort(arraySize, 2, names, classes, rarities, sets, types, costs);
+        cardManager.insertionSort(arraySize, 6, names, classes, rarities, sets, types, costs);
+        cardManager.insertionSort(arraySize, 1, names, classes, rarities, sets, types, costs);
+    }else if(method == "filter" && sorting == "i"){
+        cardManager.insertionSort(arraySize, 5, names, classes, rarities, sets, types, costs);
+    }else{
+        return 0;
     }
 
-    //CardManager cardManager;
-    //cardManager.insertionSort();
+    if(method == "filter"){
+        outputFile.open("files/hs-set-10k-filter.txt", fstream::out);
+    }else{
+        outputFile.open("files/hs-set-10k-full.txt", fstream::out);
+    }
+
+    for(int k = 0; k < arraySize; k++){
+        outputFile << names[k] << '\t' << classes[k] << '\t' << rarities[k]<<'\t' << sets[k] <<'\t' << types[k] <<'\t' << costs[k] << '\n';
+    }
 
     delete [] names;
     delete [] classes;
